@@ -9,5 +9,8 @@ public class CyclesTemps : MonoBehaviour {
 	public float _maxLumiereLuminosite;
 	public float _minLumiereLuminosite;
 
-
+    void Awake() {
+        DontDestroyOnLoad(transform.gameObject);
+    }
 }
+

@@ -1,13 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
+[SerializeAll]
 public class TempsJeu : MonoBehaviour {
-	public Transform[] soleil;
+	public GameObject Soleil;
 	
 	
-	//Ajouté pour debug serialization du soleil, a retirer si plus besoin.
-	[SerializeField]
-	private CyclesTemps[] _cycleTempsScript;
+
+	//private CyclesTemps[] _cycleTempsScript;
 	
 	public float jourCycleMinutes = 1;
 	
@@ -20,13 +20,11 @@ public class TempsJeu : MonoBehaviour {
 	
 	private const float DEGREES_PAR_SECONDE = 360 / JOUR;
 	
-		//Ajouté pour debug serialization du soleil, a retirer si plus besoin.
-	[SerializeField]
+
 	private float _degreeRotation;
 	
 	
-		//Ajouté pour debug serialization du soleil, a retirer si plus besoin.
-	[SerializeField]
+
 	private float _heureDuJour;
 	public string HeureDuJour;
 	
@@ -38,28 +36,38 @@ public class TempsJeu : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		_cycleTempsScript = new CyclesTemps[soleil.Length];
 		
+		//POur unity Serializer, ca evite de ré initialiser la classe
+		//if(LevelSerializer.IsDeserializing) return;
+			
+	//	_cycleTempsScript = new CyclesTemps[soleil.Length];
+		
+
+
+
+			
+	/*	
 		for(int cnt = 0; cnt < soleil.Length; cnt++) {
 			CyclesTemps temp = soleil[cnt].GetComponent<CyclesTemps>();
 			
 			if(temp == null) {
 				Debug.LogWarning("Script Cycle Temps non trouvé. Ajout du script");
-				soleil[cnt].gameObject.AddComponent<CyclesTemps>();
+				soleil[cnt].AddComponent<CyclesTemps>();
 				
 				temp = soleil[cnt].GetComponent<CyclesTemps>();
 			}
 			_cycleTempsScript[cnt] = temp;
 		}
-		
+		*/
 		_heureDuJour = 0;
 		_degreeRotation = DEGREES_PAR_SECONDE * JOUR / (jourCycleMinutes * MINUTE);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		for(int cnt = 0; cnt < soleil.Length; cnt++)
-			soleil[cnt].Rotate(new Vector3(_degreeRotation, 0 ,0) * Time.deltaTime);
+		//for(int cnt = 0; cnt < soleil.Length; cnt++)
+			//soleil[cnt]
+			Soleil.transform.Rotate(new Vector3(_degreeRotation, 0 ,0) * Time.deltaTime);
 		
 		_heureDuJour += Time.deltaTime;
 		//Debug.Log (_heureDuJour);

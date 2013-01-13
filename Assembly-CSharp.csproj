@@ -46,7 +46,9 @@
   <ItemGroup>
      <Compile Include="Assets\Twur\Scripts\Control_anims.cs" />
      <Compile Include="Assets\Twur\Scripts\CyclesTemps.cs" />
+     <Compile Include="Assets\Twur\Scripts\FlecheEnVol.cs" />
      <Compile Include="Assets\Twur\Scripts\TempsJeu.cs" />
+     <Compile Include="Assets\Twur\Scripts\TirFleches.cs" />
      <Compile Include="Assets\Twur\Scripts\pauseMenu.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Twur\Shaders\SkyboxBlended.shader" />

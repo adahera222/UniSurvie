@@ -7,5 +7,5 @@ Utilisation de GIT pour versionning.
 
 Project developped with Unity 3D (Free version) : First person survival game.
 Done by an amateur on personnal time, code is expected to be neither clean nor optimised.
-Using GIT for versionning.
+Using github for versionning.
 

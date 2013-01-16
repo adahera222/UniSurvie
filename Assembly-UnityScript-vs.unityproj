@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Twur\Scripts\CH_StatsJoueur.js" />
-     <Compile Include="Assets\Twur\Scripts\GraviteSousMarine.js" />
      <Compile Include="Assets\Twur\Scripts\VueSousMarine.js" />
      <Compile Include="Assets\Twur\Scripts\deplacement_alternatif.js" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />

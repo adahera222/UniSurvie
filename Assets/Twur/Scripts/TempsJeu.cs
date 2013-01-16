@@ -31,34 +31,15 @@ public class TempsJeu : MonoBehaviour {
 	private int _tempsJours;
 	private int _tempsHeures;
 	private int _tempsMinutes;
-	private int _tempsReste;
-	private int _tempIntSecondes;
+	private int _tempsResteSec;
+	private int _tempsResteMin;
+	private int _tempsResteHeures;	
+	private int _tempsIntSecondes;
 	
 	// Use this for initialization
 	void Start () {
 		
-		//POur unity Serializer, ca evite de ré initialiser la classe
-		//if(LevelSerializer.IsDeserializing) return;
-			
-	//	_cycleTempsScript = new CyclesTemps[soleil.Length];
-		
 
-
-
-			
-	/*	
-		for(int cnt = 0; cnt < soleil.Length; cnt++) {
-			CyclesTemps temp = soleil[cnt].GetComponent<CyclesTemps>();
-			
-			if(temp == null) {
-				Debug.LogWarning("Script Cycle Temps non trouvé. Ajout du script");
-				soleil[cnt].AddComponent<CyclesTemps>();
-				
-				temp = soleil[cnt].GetComponent<CyclesTemps>();
-			}
-			_cycleTempsScript[cnt] = temp;
-		}
-		*/
 		_heureDuJour = 0;
 		_degreeRotation = DEGREES_PAR_SECONDE * JOUR / (jourCycleMinutes * MINUTE);
 	}
@@ -73,19 +54,44 @@ public class TempsJeu : MonoBehaviour {
 		//Debug.Log (_heureDuJour);
 		
 		//Calcul de temps ig par moi meme
-		_tempIntSecondes =  (int) _heureDuJour;
+		_tempsIntSecondes =  (int) _heureDuJour;
 		
+		//si moins d'une heure de jeu écoulée
 		if(_heureDuJour < 3600){
 			
-			_tempsMinutes = (_tempIntSecondes / 60 );
-			_tempsReste = ( _tempIntSecondes % 60 );
+			_tempsMinutes = (_tempsIntSecondes / 60 );
+			
+			//modulo pour le reste des secondes
+			_tempsResteSec = ( _tempsIntSecondes % 60 );
 			
 		}
-		else if(_heureDuJour > 3600 && _heureDuJour < 86400{
-			Debug.Log("Oops pas encore prévu le temps dépass");
+		//si plus d'une heure et moins d'un jour de jeu écoulé
+		else if(_heureDuJour > 3600 && _heureDuJour < 86400){
+			_tempsMinutes = (_tempsIntSecondes / 60 );
+			_tempsHeures = (_tempsMinutes /60);
+			
+			//calcul des modulos minutes pour avoir un résultat correct a l'affichage
+			_tempsResteSec = ( _tempsIntSecondes % 60 );
+			
+		}
+		else if(_heureDuJour > 86400){
+			
+			//Une fois déterminé le nombre de minutes, on peut calculer le nombre d'heures et une fois le nombre d'heures acquis.. etc.
+			_tempsMinutes = (_tempsIntSecondes / 60 );
+			_tempsHeures = (_tempsMinutes / 60);
+			_tempsJours = (_tempsHeures / 24);
+			
+			//calcul des modulos..
+			_tempsResteSec = ( _tempsIntSecondes % 60 );
+
+		}
+		else
+		{
+			Debug.LogError("Problème dans le calcul du temps en jeu écoulé (script: TempsJeu.cs)");
 		}
 		
-		HeureDuJour = (_tempMinutes.ToString() + "Min " + _tempReste.ToString() + "Sec");
+		
+		HeureDuJour = (_tempsMinutes.ToString() + "Min " + _tempsResteSec.ToString() + "Sec");
 		Horloge.text = HeureDuJour;
 		//Debug.Log (HeureDuJour);
 	}

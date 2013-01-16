@@ -25,13 +25,13 @@ public class TempsJeu : MonoBehaviour {
 	
 	
 
-	private float _heureDuJour;
+	public float _heureDuJour;
 	public string HeureDuJour;
 	
-	private int _tempJours;
-	private int _tempHeures;
-	private int _tempMinutes;
-	private int _tempReste;
+	private int _tempsJours;
+	private int _tempsHeures;
+	private int _tempsMinutes;
+	private int _tempsReste;
 	private int _tempIntSecondes;
 	
 	// Use this for initialization
@@ -67,7 +67,7 @@ public class TempsJeu : MonoBehaviour {
 	void Update () {
 		//for(int cnt = 0; cnt < soleil.Length; cnt++)
 			//soleil[cnt]
-			Soleil.transform.Rotate(new Vector3(_degreeRotation, 0 ,0) * Time.deltaTime);
+		Soleil.transform.Rotate(new Vector3(_degreeRotation, 0 ,0) * Time.deltaTime);
 		
 		_heureDuJour += Time.deltaTime;
 		//Debug.Log (_heureDuJour);
@@ -76,11 +76,13 @@ public class TempsJeu : MonoBehaviour {
 		_tempIntSecondes =  (int) _heureDuJour;
 		
 		if(_heureDuJour < 3600){
-			_tempMinutes = (_tempIntSecondes / 60 );
-			_tempReste = ( _tempIntSecondes % 60 );
+			
+			_tempsMinutes = (_tempIntSecondes / 60 );
+			_tempsReste = ( _tempIntSecondes % 60 );
+			
 		}
-		else{
-			Debug.Log("Oops pas encore prévu");
+		else if(_heureDuJour > 3600 && _heureDuJour < 86400{
+			Debug.Log("Oops pas encore prévu le temps dépass");
 		}
 		
 		HeureDuJour = (_tempMinutes.ToString() + "Min " + _tempReste.ToString() + "Sec");

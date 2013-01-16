@@ -47,6 +47,7 @@
      <Compile Include="Assets\Twur\Scripts\Control_anims.cs" />
      <Compile Include="Assets\Twur\Scripts\CyclesTemps.cs" />
      <Compile Include="Assets\Twur\Scripts\FlecheEnVol.cs" />
+     <Compile Include="Assets\Twur\Scripts\GestionMeteo.cs" />
      <Compile Include="Assets\Twur\Scripts\TempsJeu.cs" />
      <Compile Include="Assets\Twur\Scripts\TirFleches.cs" />
      <Compile Include="Assets\Twur\Scripts\pauseMenu.cs" />

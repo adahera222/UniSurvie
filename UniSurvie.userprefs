@@ -1,12 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Twur\Scripts\GestionMeteo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Twur\Scripts\Nage.cs">
     <Files>
       <File FileName="Assets\Twur\Scripts\GestionMeteo.cs" Line="9" Column="33" />
-      <File FileName="Assets\Twur\Scripts\TempsJeu.cs" Line="47" Column="1" />
       <File FileName="Assets\Twur\Scripts\CyclesTemps.cs" Line="1" Column="1" />
-      <File FileName="Assets\Twur\Scripts\TirFleches.cs" Line="25" Column="35" />
+      <File FileName="Assets\Twur\Scripts\TirFleches.cs" Line="1" Column="1" />
       <File FileName="Assets\Twur\Scripts\FlecheEnVol.cs" Line="1" Column="1" />
+      <File FileName="Assets\Twur\Scripts\TempsJeu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Twur\Scripts\Nage.cs" Line="38" Column="60" />
+      <File FileName="Assets\Twur\Scripts\deplacement_alternatif.js" Line="1" Column="1" />
+      <File FileName="Assets\Twur\Scripts\CH_StatsJoueur.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

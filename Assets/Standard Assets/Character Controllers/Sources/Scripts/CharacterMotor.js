@@ -390,10 +390,17 @@ private function ApplyInputVelocityChange (velocity : Vector3) {
 
 private function ApplyGravityAndJumping (velocity : Vector3) {
 	
-		//ajout pour eau
+	
+	
+	
+		//AJOUT POUR EAU
+		//EN COURS
+		
+		
+		
 
 	var niveauEau : float = 24.5;
-if (this.gameObject.transform.position.y > niveauEau){
+//if (this.gameObject.transform.position.y > niveauEau){
 
 	if (!inputJump || !canControl) {
 		jumping.holdingJumpButton = false;
@@ -463,7 +470,7 @@ if (this.gameObject.transform.position.y > niveauEau){
 	}
 	
 	return velocity;
-	}
+	//}
 }
 
 function OnControllerColliderHit (hit : ControllerColliderHit) {

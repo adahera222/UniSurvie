@@ -54,10 +54,12 @@ public class Nage : MonoBehaviour {
 					caracMotor.SetVelocity(new Vector3(0,0,0));
 					caracMotor.movement.gravity = 0;
 					float curVitesse = vitesseMontee * Input.GetAxis("Vertical");
-					if(Input.GetAxis("Vertical") > 0)
-					JoueurPrefab.transform.position = JoueurPrefab.transform.position + (Camera.mainCamera.transform.forward * vitesseMontee * Time.deltaTime);
-					if(Input.GetAxis("Vertical") < 0)
-					JoueurPrefab.transform.position = JoueurPrefab.transform.position - (Camera.mainCamera.transform.forward * vitesseMontee * Time.deltaTime);					
+				//if(Input.GetAxis("Vertical") > 0)
+					JoueurPrefab.rigidbody.AddRelativeForce(Camera.mainCamera.transform.forward * vitesseMontee);
+				//if(Input.GetAxis("Vertical") < 0)
+				//JoueurPrefab.rigidbody.AddRelativeForce(Camera.mainCamera.transform.forward * vitesseMontee);	
+					//JoueurPrefab.transform.position = JoueurPrefab.transform.position - (Camera.mainCamera.transform.forward * vitesseMontee * Time.deltaTime);					
+
 					Debug.Log("touche active pour nage");
 					//JoueurPrefab.Move(new Vector3(0, vitesseMontee, 0) * Time.deltaTime);
 					

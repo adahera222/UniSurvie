@@ -1,6 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Twur\Scripts\FlecheEnVol.cs">
+    <Files>
+      <File FileName="Assets\Twur\Scripts\EnnemisDegats.cs" Line="12" Column="1" />
+      <File FileName="Assets\Twur\Scripts\FlecheEnVol.cs" Line="38" Column="4" />
+      <File FileName="Assets\Twur\Scripts\MouvementsEnnemi.cs" Line="1" Column="1" />
+      <File FileName="Assets\Twur\Scripts\TirFleches.cs" Line="18" Column="20" />
+      <File FileName="Assets\Twur\Scripts\TempsJeu.cs" Line="93" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

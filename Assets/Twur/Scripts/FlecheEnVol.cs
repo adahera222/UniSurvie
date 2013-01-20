@@ -6,46 +6,55 @@ public class FlecheEnVol : MonoBehaviour {
 	public float _tempsDestructionFleche;
 	//le transform au moment du tir
 	private Vector3 vectorTir;
-	
-	private bool FlecheTiree;
+	private BoxCollider colliderComp;
+	private bool enVol;
 	
 	// Use this for initialization
 	void Start () {
 		
-		
-		FlecheTiree = false;
+		//accédé par l'arc via EstTiree
+		//enVol = false;
 		vectorTir = transform.position;
-		Destroy(gameObject, _tempsDestructionFleche);
 		
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if(FlecheTiree)
-		{
+		if(enVol){
 			//la fleche "regarde" dans la bonne direction (pointe devant) en vol.
-			transform.LookAt(vectorTir - rigidbody.velocity);
-		}
-		else if (!FlecheTiree)
-		{
+			transform.LookAt(vectorTir + rigidbody.velocity);
+			Debug.Log("en vol");
+
 			
-		}
-		else
-		{
-			Debug.LogError("probleme variable fleche tiree");
-			return;
 		}
 	}
 	
 	void OnCollisionEnter(Collision Col) {
-  		rigidbody.isKinematic =true; // stop physics
- 		//transform.parent = Col.transform; // doesn't move yet, but will move w/what it hit
+		
+		enVol =false;
+		
+		if(Col.gameObject.tag != "Player")
+		{
+  		rigidbody.isKinematic =true;
+		transform.parent= Col.transform;
+		// on desactive le collider
+		colliderComp = GetComponent<BoxCollider>();
+		colliderComp.enabled = false;
+		
+		if(Col.gameObject.tag != "ennemi"){
+
+			Destroy(gameObject, _tempsDestructionFleche);
+			}
+		}
+		
 	}
 	
 	public void EstTiree(bool tir) {
-		FlecheTiree = tir;
+		enVol = tir;
+		
 	}
+	
+
 }
 

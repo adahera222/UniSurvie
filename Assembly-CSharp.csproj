@@ -46,8 +46,10 @@
   <ItemGroup>
      <Compile Include="Assets\Twur\Scripts\Control_anims.cs" />
      <Compile Include="Assets\Twur\Scripts\CyclesTemps.cs" />
+     <Compile Include="Assets\Twur\Scripts\EnnemisDegats.cs" />
      <Compile Include="Assets\Twur\Scripts\FlecheEnVol.cs" />
      <Compile Include="Assets\Twur\Scripts\GestionMeteo.cs" />
+     <Compile Include="Assets\Twur\Scripts\MouvementsEnnemi.cs" />
      <Compile Include="Assets\Twur\Scripts\Nage.cs" />
      <Compile Include="Assets\Twur\Scripts\TempsJeu.cs" />
      <Compile Include="Assets\Twur\Scripts\TirFleches.cs" />

@@ -5,10 +5,6 @@ using System.Collections;
 public class TempsJeu : MonoBehaviour {
 	public GameObject Soleil;
 	
-	
-
-	//private CyclesTemps[] _cycleTempsScript;
-	
 	public float jourCycleMinutes = 1;
 	
 	public GUIText Horloge;
@@ -36,22 +32,20 @@ public class TempsJeu : MonoBehaviour {
 	private int _tempsResteHeures;	
 	private int _tempsIntSecondes;
 	
-	// Use this for initialization
 	void Start () {
 		
-
-		_heureDuJour = 0;
+		_heureDuJour = 43200;
+		//artificiellement a midi (0 levé 90 midi 180 couché 270 minuit 360 levé)
+		Soleil.transform.Rotate(new Vector3(90,0,0));
+			
 		_degreeRotation = DEGREES_PAR_SECONDE * JOUR / (jourCycleMinutes * MINUTE);
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		//for(int cnt = 0; cnt < soleil.Length; cnt++)
-			//soleil[cnt]
+
 		Soleil.transform.Rotate(new Vector3(_degreeRotation, 0 ,0) * Time.deltaTime);
 		
 		_heureDuJour += Time.deltaTime;
-		//Debug.Log (_heureDuJour);
 		
 		//Calcul de temps ig par moi meme
 		_tempsIntSecondes =  (int) _heureDuJour;
@@ -71,7 +65,10 @@ public class TempsJeu : MonoBehaviour {
 			_tempsHeures = (_tempsMinutes /60);
 			
 			//calcul des modulos minutes pour avoir un résultat correct a l'affichage
+			_tempsResteMin = ( _tempsMinutes % 60 );
 			_tempsResteSec = ( _tempsIntSecondes % 60 );
+			_tempsMinutes = _tempsResteMin;
+			
 			
 		}
 		else if(_heureDuJour > 86400){
@@ -91,7 +88,7 @@ public class TempsJeu : MonoBehaviour {
 		}
 		
 		
-		HeureDuJour = (_tempsMinutes.ToString() + "Min " + _tempsResteSec.ToString() + "Sec");
+		HeureDuJour = (_tempsHeures.ToString() + " H " + _tempsMinutes.ToString() + "Min " + _tempsResteSec.ToString() + "Sec");
 		Horloge.text = HeureDuJour;
 		//Debug.Log (HeureDuJour);
 	}

@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{2B544196-6086-3F90-BE08-3700B12CDFC0}</ProjectGuid>
+	<ProjectGuid>{BADF75F2-E349-8F70-1A9E-758331DB2CD9}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,28 +44,36 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Twur\Scripts\Control_anims.cs" />
-     <Compile Include="Assets\Twur\Scripts\CyclesTemps.cs" />
-     <Compile Include="Assets\Twur\Scripts\EnnemisDegats.cs" />
-     <Compile Include="Assets\Twur\Scripts\FlecheEnVol.cs" />
-     <Compile Include="Assets\Twur\Scripts\GestionMeteo.cs" />
-     <Compile Include="Assets\Twur\Scripts\MouvementsEnnemi.cs" />
-     <Compile Include="Assets\Twur\Scripts\Nage.cs" />
-     <Compile Include="Assets\Twur\Scripts\TempsJeu.cs" />
-     <Compile Include="Assets\Twur\Scripts\TirFleches.cs" />
-     <Compile Include="Assets\Twur\Scripts\pauseMenu.cs" />
+     <Compile Include="Assets\UnitySteer\Editor\AutonomousVehicleEditor.cs" />
+     <Compile Include="Assets\UnitySteer\Editor\Vector3FoldoutEditor.cs" />
+     <Compile Include="Assets\UnitySteer\Editor\VehicleEditor.cs" />
+     <None Include="Assets\UnitySteer\License.txt" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Twur\Shaders\SkyboxBlended.shader" />
+     <None Include="Assets\UnitySteer\C5\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Plugins\whydoidoit.com\license.txt" />
      <None Include="Assets\Animations\_CompleteAnimationList.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>D:\Program Files (x86)\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="C5">
+ <HintPath>Assets\UnitySteer\C5\C5.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
       <Project>{B6C62886-A2E3-9090-D040-8C9236CC2149}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{2B544196-6086-3F90-BE08-3700B12CDFC0}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass-vs.csproj">
+      <Project>{D05C5DF6-57E4-BA1D-365D-2DC2A9B5304B}</Project>      <Name>Assembly-CSharp-Editor-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

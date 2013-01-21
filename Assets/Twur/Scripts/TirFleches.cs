@@ -5,18 +5,24 @@ public class TirFleches : MonoBehaviour {
 
 	public Rigidbody prefabFleche;
 	public float forceTir;
-	
+	public float timerArc;
+
 	private Rigidbody instanceFleche;
 	private Rigidbody instanceFleche2; // la fleche tirée est un autre objet pour éviter les bugs de rotation locale / globale	
 	private bool _flecheChargee;
 	private Transform _spawnFleche;
-
+	
+	private bool timer;
+	private float tempTimerArc;
+	
 	
 	
 	// Use this for initialization
 	void Start () {
 		_flecheChargee = false;
 		_spawnFleche = gameObject.transform.FindChild("spawnFleche");
+		timer = false;
+		tempTimerArc = 0.0f;
 
 
 		
@@ -24,13 +30,14 @@ public class TirFleches : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		if(Input.GetButtonDown("Fire1"))
 		{
 			if(_flecheChargee)
 			{
 				return;
 			}
-			else if(!_flecheChargee)
+			else if((!_flecheChargee)&&(!timer))
 			{
 				
 				instanceFleche = (Rigidbody)Instantiate(prefabFleche, _spawnFleche.position, _spawnFleche.rotation);
@@ -57,13 +64,27 @@ public class TirFleches : MonoBehaviour {
 				
 				instanceFleche2.AddForce(transform.forward * forceTir);
 				_flecheChargee = false;
-				
+				timer = true;
+				tempTimerArc = Time.time + timerArc;
+
+		
 
 			}
 			else if (!_flecheChargee){
 				return;
 			}
-	
+		
 		}
+		
+		if(timer)
+		{
+			
+			if(Time.time > tempTimerArc)
+			{
+				timer = false;
+				
+			}
+		}
+
 	}
 }

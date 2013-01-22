@@ -1,13 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Twur\Scripts\GestionJoueurs.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Twur\Scripts\Nage.cs">
     <Files>
-      <File FileName="Assets\Twur\Scripts\GestionJoueurs.cs" Line="19" Column="70" />
-      <File FileName="Assets\Twur\Scripts\TirFleches.cs" Line="68" Column="5" />
-      <File FileName="Assets\Twur\Scripts\EnnemisDegats.cs" Line="1" Column="1" />
-      <File FileName="Assets\Twur\Scripts\FlecheEnVol.cs" Line="1" Column="1" />
-      <File FileName="Assets\Twur\Scripts\MouvementsEnnemi.cs" Line="1" Column="1" />
-      <File FileName="Assets\Twur\Scripts\TempsJeu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Twur\Scripts\GestionJoueurs.cs" Line="1" Column="14" />
+      <File FileName="Assets\Twur\Scripts\TirFleches.cs" Line="1" Column="14" />
+      <File FileName="Assets\Twur\Scripts\EnnemisDegats.cs" Line="1" Column="14" />
+      <File FileName="Assets\Twur\Scripts\FlecheEnVol.cs" Line="1" Column="14" />
+      <File FileName="Assets\Twur\Scripts\MouvementsEnnemi.cs" Line="1" Column="14" />
+      <File FileName="Assets\Twur\Scripts\TempsJeu.cs" Line="1" Column="14" />
+      <File FileName="Assets\Twur\Scripts\Nage.cs" Line="28" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

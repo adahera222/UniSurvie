@@ -1,6 +1,7 @@
 //Merci a http://answers.unity3d.com/questions/164638/how-to-make-the-fps-character-controller-run-and-c.html
 // code trouvé sur answers par Aldo Naletto, modifié par moi même
 
+//upd - a refaire en cs
 var walkSpeed: float = 4; // Vitesse normale
 var crchSpeed: float = 2; // Vitesse accroupis
 var runSpeed: float = 8; // Vitesse de course

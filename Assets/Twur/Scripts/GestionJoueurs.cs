@@ -1,3 +1,4 @@
+//arthur sore
 //Script attaché a l'objet MaitreDuJeu, sert a gérer toutes les variables des joueurs.
 //Pas attaché au joueur pour pouvoir sérializer toutes les infos plus facilement et si mode multijoueur un jour 
 

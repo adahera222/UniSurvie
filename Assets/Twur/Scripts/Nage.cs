@@ -1,3 +1,6 @@
+//arthur sore 
+// attaché a l'objet joueur contenant un charactermotor
+
 using UnityEngine;
 using System.Collections;
 
@@ -9,6 +12,7 @@ public class Nage : MonoBehaviour {
 	public float GraviteSousMarine;
 	public float GraviteDefaut;
 	public float vitesseMontee;
+	public bool JoueurSousEau;
 	
 	private CharacterMotor caracMotor;
 	
@@ -21,6 +25,7 @@ public class Nage : MonoBehaviour {
 		caracMotor = GetComponent<CharacterMotor>();
 		caracMotor.movement.gravity = GraviteDefaut;
 		toucheNage = false;		
+		JoueurSousEau = false;
 	}
 	void Update () {
 		//Si en dessous du niveau sous marin, et que le joueur nage..

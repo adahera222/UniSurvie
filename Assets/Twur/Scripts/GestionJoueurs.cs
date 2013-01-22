@@ -38,29 +38,25 @@ public class GestionJoueurs : MonoBehaviour {
 			Destroy(JoueurGameObject);
 		}
 		else
-		{
-			//vrai = bonus vie
+		{	//activation ou non du modificateur
 			if(BoolModVps)
 			{
 				_pvJoueur = _pvJoueur + (ModifieurVieParSeconde*Time.deltaTime);
 			}
-			//faux = malus vie
-			else
-			{
-				_pvJoueur = _pvJoueur - (ModifieurVieParSeconde*Time.deltaTime);
+			else{
 			}
-			
+			//activation ou non du multiplicateur
 			if(BoolMulVps)
 			{
-				_pvJoueur = _pvJoueur+(_pvJoueur * (ModifieurVieParSeconde*Time.deltaTime));
+				_pvJoueur = _pvJoueur+(_pvJoueur * (MultiplicateurVieParSeconde*Time.deltaTime));
 			}
 			else
 			{
-				_pvJoueur = _pvJoueur+(_pvJoueur * (ModifieurVieParSeconde*Time.deltaTime));
-			}			
+				}
+
 		}
 	}
-	
+	//setters et getters
 	public float getPvJoueur () {
 		return _pvJoueur;
 	}

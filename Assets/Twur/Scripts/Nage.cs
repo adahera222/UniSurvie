@@ -12,6 +12,7 @@ public class Nage : MonoBehaviour {
 	public float GraviteSousMarine;
 	public float GraviteDefaut;
 	public float vitesseMontee;
+	//accédé par exemple par le script qui fournis les états a l'animator controller
 	public bool JoueurSousEau;
 	
 	private CharacterMotor caracMotor;
@@ -31,6 +32,7 @@ public class Nage : MonoBehaviour {
 		//Si en dessous du niveau sous marin, et que le joueur nage..
 		if((transform.position.y < NiveauSousMarin-1)){
 			//gravité sous marine (touche nage relachée, en descente)
+			JoueurSousEau = true;
 			caracMotor.movement.gravity = GraviteSousMarine;
 			//deplacement vertical
 			if(Input.GetKeyDown(KeyCode.Z))
@@ -59,6 +61,7 @@ public class Nage : MonoBehaviour {
 		else{
 			//sorti de l'eau
 			caracMotor.movement.gravity = GraviteDefaut;
+			JoueurSousEau = false;
 		}
 	}
 }

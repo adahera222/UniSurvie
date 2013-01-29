@@ -1,5 +1,6 @@
 //arthur sore
 
+
 using UnityEngine;
 using System.Collections;
 
@@ -19,7 +20,6 @@ public class TirFleches : MonoBehaviour {
 	
 	
 	
-	// Use this for initialization
 	void Start () {
 		_flecheChargee = false;
 		_spawnFleche = gameObject.transform.FindChild("spawnFleche");
@@ -30,7 +30,6 @@ public class TirFleches : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 		if(Input.GetButtonDown("Fire1"))

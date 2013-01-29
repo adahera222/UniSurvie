@@ -1,13 +1,18 @@
+//arthur sore
 using UnityEngine;
 using System.Collections;
 
 public class BrasRotation : MonoBehaviour {
-	private Vector3 tempVect3;
 	public GameObject Joueur;
-	
+	private Animator anim; // reference du composant animator
+	private bool rotationBras;
+
 	// Use this for initialization
 	void Start () {
 		
+		rotationBras = false;
+		anim = GetComponent<Animator>();
+
 	}
 	
 	// Update is called once per frame
@@ -15,9 +20,23 @@ public class BrasRotation : MonoBehaviour {
 		
 		
 		
-		if(Joueur.GetComponent<Nage> ().JoueurSousEau)
+		if(Joueur.GetComponent<Nage> ().JoueurSousEau) 
 		{
 			transform.rotation = Camera.mainCamera.transform.rotation;	
+			rotationBras = true;
+		}
+		else if(Joueur.GetComponent<AttaqueJoueur> ().RotationBras)
+		{
+			transform.rotation = Camera.mainCamera.transform.rotation;	
+			rotationBras = true;
+		}
+		else
+		{	
+			if(rotationBras)
+			{
+				transform.rotation = transform.parent.rotation;
+				rotationBras = false;
+			}
 		}
 
 	}

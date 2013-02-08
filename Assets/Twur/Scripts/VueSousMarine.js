@@ -4,6 +4,7 @@
  
 //Define variables
 var niveauSousMarin = 24.5;
+var test : float;
  
 //fixé par rapport au script original, on ne peut pas acceder a ces variables en dehors de la fonction start
 //donc en deux temps

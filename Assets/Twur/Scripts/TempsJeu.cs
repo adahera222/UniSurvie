@@ -93,5 +93,6 @@ public class TempsJeu : MonoBehaviour {
 		HeureDuJour = (_tempsHeures.ToString() + " H " + _tempsMinutes.ToString() + "Min " + _tempsResteSec.ToString() + "Sec");
 		Horloge.text = HeureDuJour;
 		//Debug.Log (HeureDuJour);
+
 	}
 }

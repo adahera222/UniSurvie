@@ -8,6 +8,7 @@ public class LootJoueur : MonoBehaviour {
 	public GameObject[] Armes;
 	public Transform TransformArmeMain;
 	public Transform TransformArmeDistance;
+	public Transform TransformPaumeZero;
 	private GameObject armeCourante;
 	private Vector3 nullPosition;
 	private Quaternion nullRotation;
@@ -45,6 +46,19 @@ public class LootJoueur : MonoBehaviour {
 			else {
 				armeCourante = (GameObject)Instantiate(Armes[1], TransformArmeDistance.position, TransformArmeDistance.rotation);
 				armeCourante.transform.parent = TransformArmeDistance;
+				armeCourante.transform.localPosition = nullPosition;
+				armeCourante.transform.localRotation = nullRotation;				
+			}
+		}
+		else if(Input.GetKeyUp(KeyCode.B))
+		{
+			if(armeCourante != null)
+			{
+				Destroy(armeCourante);
+			}
+			else {
+				armeCourante = (GameObject)Instantiate(Armes[2], TransformPaumeZero.position, TransformPaumeZero.rotation);
+				armeCourante.transform.parent = TransformPaumeZero;
 				armeCourante.transform.localPosition = nullPosition;
 				armeCourante.transform.localRotation = nullRotation;				
 			}

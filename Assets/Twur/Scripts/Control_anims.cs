@@ -9,6 +9,7 @@ public class Control_anims : MonoBehaviour {
 	private bool _nage;
 	private bool _attaqueCharge;
 	private bool _attaqueCorps;
+	private bool _boussole;
 	
 	void Start () {
 		_nage = false;
@@ -24,6 +25,10 @@ public class Control_anims : MonoBehaviour {
 		_nage = gameObject.GetComponent<Nage> ().JoueurSousEau;
 		_attaqueCorps = gameObject.GetComponent<AttaqueJoueur> ().EnAttaque;
 		_attaqueCharge = gameObject.GetComponent<AttaqueJoueur> ().EnCharge;
+		_boussole = gameObject.GetComponent<AttaqueJoueur>().Boussole;
+		
+		anim.SetBool("Boussole", _boussole);	
+		
 
 		if(_nage)
 		{

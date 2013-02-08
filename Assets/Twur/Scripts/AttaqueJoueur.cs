@@ -8,6 +8,7 @@ public class AttaqueJoueur : MonoBehaviour {
 	
 	public bool EnAttaque;
 	public bool EnCharge;
+	public bool Boussole;
 	public float TimerArmeCac;
 	public float DureeFocusRotationBras;
 	
@@ -64,6 +65,17 @@ public class AttaqueJoueur : MonoBehaviour {
 			tempRotBrasTimer = Time.time + DureeFocusRotationBras;
 			
 			
+		}
+		else if(Input.GetKeyUp(KeyCode.B))
+		{
+			if(Boussole)
+			{
+				Boussole=false;
+			}
+			else if(!Boussole)
+			{
+				Boussole=true;
+			}
 		}
 		
 		if(timer)

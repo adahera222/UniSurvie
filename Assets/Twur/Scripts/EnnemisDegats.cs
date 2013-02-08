@@ -6,7 +6,6 @@ using System.Collections;
 public class EnnemisDegats : MonoBehaviour {
 	
 	public int PointsDeVie;
-	public Rigidbody EnnemiRigidbody;
 	
 		
 	void Start () {
@@ -19,15 +18,15 @@ public class EnnemisDegats : MonoBehaviour {
 
 	}
 	
+	//collision réglée via les layers physiques
 	void OnCollisionEnter(Collision collision){
 		PointsDeVie = PointsDeVie-10;	
 		if(PointsDeVie <= 0)
 			mort ();
-
 	}
 	
 	void mort() {
-		EnnemiRigidbody.isKinematic = false;
+		rigidbody.isKinematic = false;
 		Destroy(gameObject, 5);
 	}
 }

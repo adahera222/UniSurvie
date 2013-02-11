@@ -60,7 +60,7 @@ public class LootJoueur : MonoBehaviour {
 				armeCourante = (GameObject)Instantiate(Armes[2], TransformPaumeZero.position, TransformPaumeZero.rotation);
 				armeCourante.transform.parent = TransformPaumeZero;
 				armeCourante.transform.localPosition = nullPosition;
-				armeCourante.transform.localRotation = nullRotation;				
+				//armeCourante.transform.localRotation = nullRotation;				
 			}
 		}
 	}

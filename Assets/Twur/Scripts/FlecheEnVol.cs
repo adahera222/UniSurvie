@@ -27,7 +27,7 @@ public class FlecheEnVol : MonoBehaviour {
 		if(enVol){
 			//la fleche "regarde" dans la bonne direction (pointe devant) en vol.
 			transform.LookAt(vectorTir + rigidbody.velocity);
-			Debug.Log("en vol");
+		//	Debug.Log("en vol");
 
 			
 		}

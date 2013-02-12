@@ -6,6 +6,10 @@ using System.Collections;
 
 public class TirFleches : MonoBehaviour {
 
+	//variables accédées par AttaqueJoueur pour cohérence
+	public bool InputCharge;
+	public bool InputTir;
+	
 	public Rigidbody prefabFleche;
 	public float forceTir;
 	public float timerArc;
@@ -17,6 +21,8 @@ public class TirFleches : MonoBehaviour {
 	
 	private bool timer;
 	private float tempTimerArc;
+	
+
 	
 	
 	
@@ -32,15 +38,17 @@ public class TirFleches : MonoBehaviour {
 	
 	void Update () {
 		
-		if(Input.GetButtonDown("Fire1"))
+		if(InputCharge)
 		{
+			
 			if(_flecheChargee)
 			{
 				return;
 			}
 			else if((!_flecheChargee)&&(!timer))
 			{
-				
+				InputCharge=false;
+
 				instanceFleche = (Rigidbody)Instantiate(prefabFleche, _spawnFleche.position, _spawnFleche.rotation);
 				// instantie comme enfant du transform:
 				instanceFleche.transform.parent = transform;
@@ -52,9 +60,12 @@ public class TirFleches : MonoBehaviour {
 			}
 		}
 		
-		if(Input.GetButtonUp("Fire1"))
+		if(InputTir)
 		{
 			if(_flecheChargee){
+				InputTir = false;
+				
+				
 				Destroy(instanceFleche.gameObject);
 				instanceFleche2 = (Rigidbody)Instantiate(prefabFleche, _spawnFleche.position, _spawnFleche.rotation);
 					
@@ -63,7 +74,7 @@ public class TirFleches : MonoBehaviour {
 				FlecheEnVol scriptFleche = instanceFleche2.GetComponent<FlecheEnVol>();
         		scriptFleche.EstTiree(true);
 				
-				instanceFleche2.AddForce(transform.forward * forceTir);
+				instanceFleche2.AddForce(_spawnFleche.transform.forward * forceTir);
 				_flecheChargee = false;
 				timer = true;
 				tempTimerArc = Time.time + timerArc;
@@ -88,4 +99,6 @@ public class TirFleches : MonoBehaviour {
 		}
 
 	}
+	
+
 }

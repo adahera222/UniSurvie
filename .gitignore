@@ -1,29 +1,5 @@
 # Unity3D .gitignore file.
 #	 Store this file at the root of your local repository.
-.DS_Store
-Library
-Assets/Animations
-Assets/Plugins
-Assets/Tree_Textures
-Assets/Twur/StoreAssets
-Assets/Twur/Animation
-Assets/Twur/GUI
-Assets/Twur/map_Wilson_Island_Outils
-Assets/Twur/Materials
-Assets/Twur/Models
-Assets/Twur/Prefabs
-Assets/Twur/scenes
-Assets/Twur/Shaders
-Assets/Twur/Skyboxes
-Assets/Twur/sons
-Temp
-*.pidb
-*.csproj
-*.sln
-*.userprefs
 *.meta
-*.asset
-Assets/Standard Assets
-Assets/Terrain Assets
 
 build

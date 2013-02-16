@@ -4,8 +4,6 @@
 Library
 Assets/Animations
 Assets/Plugins
-Assets/'Standard Assets'
-Assets/'Terrain Assets'
 Assets/Tree_Textures
 Assets/Twur/StoreAssets
 Assets/Twur/Animation
@@ -25,5 +23,7 @@ Temp
 *.userprefs
 *.meta
 *.asset
+Assets/Standard Assets
+Assets/Terrain Assets
 
 build

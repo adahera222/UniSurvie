@@ -11,6 +11,8 @@ Project("{28C412B2-36DE-D9DC-68C7-EF41860F7F3D}") = "UniSurvie", "Assembly-Unity
 EndProject
 Project("{28C412B2-36DE-D9DC-68C7-EF41860F7F3D}") = "UniSurvie", "Assembly-UnityScript.unityproj", "{CDFCED7F-8B32-BBA7-4E38-3D355FE5294E}"
 EndProject
+Project("{28C412B2-36DE-D9DC-68C7-EF41860F7F3D}") = "UniSurvie", "Assembly-UnityScript-Editor.unityproj", "{AF254888-09C1-BBCF-A7E1-5C4BA8AEFEA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,11 +39,15 @@ Global
 		{CDFCED7F-8B32-BBA7-4E38-3D355FE5294E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDFCED7F-8B32-BBA7-4E38-3D355FE5294E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDFCED7F-8B32-BBA7-4E38-3D355FE5294E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF254888-09C1-BBCF-A7E1-5C4BA8AEFEA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF254888-09C1-BBCF-A7E1-5C4BA8AEFEA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF254888-09C1-BBCF-A7E1-5C4BA8AEFEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF254888-09C1-BBCF-A7E1-5C4BA8AEFEA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
 																																																				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0

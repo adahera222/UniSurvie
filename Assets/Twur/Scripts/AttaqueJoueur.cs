@@ -37,7 +37,6 @@ public class AttaqueJoueur : MonoBehaviour {
 		RotationBras = false;
 		ChargeArc =false;
 		TirArc = false;
-		
 		inputStr ="";
 		stopUtils = false;
 	}
@@ -110,7 +109,6 @@ public class AttaqueJoueur : MonoBehaviour {
 				// timer = true;
 								
 				RotationBras = true;
-				
 				EnAttaque =false;
 				tempTimer = Time.time +TimerArmeCac;
 				
@@ -118,9 +116,8 @@ public class AttaqueJoueur : MonoBehaviour {
 				tempRotBrasTimer = Time.time + DureeFocusRotationBras;
 				
 				
-				
 			}
-
+			
 			
 			if(timer)
 			{

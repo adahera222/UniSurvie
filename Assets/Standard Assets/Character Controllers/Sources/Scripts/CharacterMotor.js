@@ -20,8 +20,6 @@ var inputMoveDirection : Vector3 = Vector3.zero;
 var inputJump : boolean = false;
 
 class CharacterMotorMovement {
-
-
 	// The maximum horizontal speed when moving
 	var maxForwardSpeed : float = 10.0;
 	var maxSidewaysSpeed : float = 10.0;
@@ -390,18 +388,6 @@ private function ApplyInputVelocityChange (velocity : Vector3) {
 
 private function ApplyGravityAndJumping (velocity : Vector3) {
 	
-	
-	
-	
-		//AJOUT POUR EAU
-		//EN COURS
-		
-		
-		
-
-	var niveauEau : float = 24.5;
-//if (this.gameObject.transform.position.y > niveauEau){
-
 	if (!inputJump || !canControl) {
 		jumping.holdingJumpButton = false;
 		jumping.lastButtonDownTime = -100;
@@ -470,7 +456,6 @@ private function ApplyGravityAndJumping (velocity : Vector3) {
 	}
 	
 	return velocity;
-	//}
 }
 
 function OnControllerColliderHit (hit : ControllerColliderHit) {
@@ -594,8 +579,7 @@ function SetVelocity (velocity : Vector3) {
 	grounded = false;
 	movement.velocity = velocity;
 	movement.frameVelocity = Vector3.zero;
-	//commenté pour eviter le message d'erreur dans la gestion de la nage (no receiver)
-//	SendMessage("OnExternalVelocity");
+	SendMessage("OnExternalVelocity");
 }
 
 // Require a character controller to be attached to the same game object

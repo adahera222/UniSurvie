@@ -1,24 +1,22 @@
 //arthur sore
+//SCRIPT MAINTENANT INUTILISE 
 using UnityEngine;
 using System.Collections;
 
 public class BrasRotation : MonoBehaviour {
-	public GameObject Joueur;
-	private Animator anim; // reference du composant animator
-	private bool rotationBras;
-
+	//public GameObject Joueur;
+	//private Animator anim; // reference du composant animator
+	//private bool rotationBras;
 	// Use this for initialization
 	void Start () {
 		
-		rotationBras = false;
-		anim = GetComponent<Animator>();
+	//	rotationBras = false;
+	//	anim = GetComponent<Animator>();
 
 	}
+/**		
 	
-	// Update is called once per frame
 	void Update () {
-		
-		
 		
 		if(Joueur.GetComponent<Nage> ().JoueurSousEau) 
 		{
@@ -32,7 +30,7 @@ public class BrasRotation : MonoBehaviour {
 		}
 		else
 		{	
-			if(rotationBras)
+			if(!rotationBras)
 			{
 				transform.rotation = transform.parent.rotation;
 				rotationBras = false;
@@ -40,4 +38,5 @@ public class BrasRotation : MonoBehaviour {
 		}
 
 	}
+	**/
 }

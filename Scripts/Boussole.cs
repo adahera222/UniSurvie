@@ -27,7 +27,8 @@ public class Boussole : MonoBehaviour {
 			positionNord +=360;
 		}
 
-		transform.Rotate(0, positionNord , 0);
+		transform.Rotate(0, positionNord , 0); 
+		
 	}
 }
 

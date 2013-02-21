@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 public class LootJoueur : MonoBehaviour {
-	
+/**	
 	//armes
 	public GameObject[] Armes;
 	public Transform TransformArmeMain;
@@ -52,11 +52,13 @@ public class LootJoueur : MonoBehaviour {
 			{
 				Destroy(armeCourante);
 			}
+			
 			armeCourante = (GameObject)Instantiate(Armes[1], TransformArmeDistance.position, TransformArmeDistance.rotation);
 			armeCourante.transform.parent = TransformArmeDistance;
 			armeCourante.transform.localPosition = nullPosition;
 			armeCourante.transform.localRotation = nullRotation;
 			setter.SetInputsArmes(ArmesInputs[1]);	
+			
 		}
 		else if (Input.GetKeyUp(KeyCode.Alpha3))
 		{
@@ -80,13 +82,15 @@ public class LootJoueur : MonoBehaviour {
 			{
 				Destroy(armeCourante);
 			}
-
+			else{
 			armeCourante = (GameObject)Instantiate(Armes[2], TransformPaumeZero.position, TransformPaumeZero.rotation);
 			armeCourante.transform.parent = TransformPaumeZero;
-			armeCourante.transform.localPosition = nullPosition;
+			//armeCourante.transform.localPosition = nullPosition;
 			//armeCourante.transform.localRotation = nullRotation;		
 			//pour l'instant je fais un test dans attaque joueur pour desactiver les inputs sur les objets utilitaires, a remanier si sélection d'emplacements par le joueur...
 			setter.SetInputsArmes("");
+				}
 		}
 	}
+	**/
 }

@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Control_anims : MonoBehaviour {
 	
-	private Animator anim; // reference du composant animator
+	private Animator anim;
 	private AnimatorStateInfo etatCourant; // reference pour l'état courant de l'animator
 	private bool _nage;
 	private bool _attaqueCharge;
@@ -15,21 +15,25 @@ public class Control_anims : MonoBehaviour {
 	
 	void Start () {
 		_nage = false;
-		anim = GetComponent<Animator>();
+
+
 	}
 	
 	void Update () {
-	
+		
+		anim = transform.GetComponent<Animator>();
+
+		
 //		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
 		anim.SetFloat ("Vitesse", v);
 		
-		_nage = gameObject.GetComponent<Nage> ().JoueurSousEau;
-		_attaqueCorps = gameObject.GetComponent<AttaqueJoueur> ().EnAttaque;
-		_attaqueCharge = gameObject.GetComponent<AttaqueJoueur> ().EnCharge;
-		_boussole = gameObject.GetComponent<AttaqueJoueur>().Boussole;
-		_attaqueArcCharge = gameObject.GetComponent<AttaqueJoueur>().ChargeArc;
-		_attaqueArcTir = gameObject.GetComponent<AttaqueJoueur>().TirArc;
+		_nage = transform.root.GetComponent<Nage> ().JoueurSousEau;
+		_attaqueCorps = transform.root.GetComponent<AttaqueJoueur> ().AttaqueCac;
+		_attaqueCharge = transform.root.GetComponent<AttaqueJoueur> ().ChargeCac;
+		_boussole = transform.root.GetComponent<AttaqueJoueur>().VueBoussole;
+		_attaqueArcCharge = transform.root.GetComponent<AttaqueJoueur>().TirArc;
+		_attaqueArcTir = transform.root.GetComponent<AttaqueJoueur>().TirArcRelache;
 		
 		
 		anim.SetBool("Boussole", _boussole);	
@@ -37,7 +41,7 @@ public class Control_anims : MonoBehaviour {
 
 		if(_nage)
 		{
-			if(v > 0.1 && gameObject.GetComponent<Nage> ().JoueurSousEau)	{
+			if(v > 0.1 && gameObject.transform.root.GetComponent<Nage> ().JoueurSousEau)	{
 				anim.SetBool("Nage", _nage);
 			}
 			else{
@@ -76,9 +80,11 @@ public class Control_anims : MonoBehaviour {
 		{
 			anim.SetBool("AttaqueArcCharge", false);
 			anim.SetBool("AttaqueArcTir", true);
-			gameObject.GetComponent<AttaqueJoueur>().TirArc = false;
+			gameObject.transform.root.GetComponent<AttaqueJoueur>().TirArc = false;
 			
 		}
 		
 	}
+	
+
 }
